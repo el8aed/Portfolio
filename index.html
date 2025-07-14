@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Michroma&family=Poppins:wght@400;500;600;700;800;900&family=Tektur:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <title>Portofolio</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h2>Portf<span class="logo">olio</span></h2>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu">
+        <button class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <button class="dark-mode"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Hi, I'm <span class="highlight">Mohamed</span></h1>
+          <p class="subtitle">Frontend Developer</p>
+          <p class="description">
+            I’m a beginner learning to build and develop websites
+          </p>
+          <div class="cta-buttons">
+            <a href="#projects" class="cta-button primary">View My Work</a>
+            <a
+              href="/CV/Mohamed_Abdelhamid_Khalil.pdf"
+              download
+              class="cta-button secondary"
+              >Dawnload CV</a
+            >
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll Down</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <div class="container">
+          <h2 data-aos="fade-up">About Me</h2>
+          <div class="about-content">
+            <div class="about-image" data-aos="fade-right">
+              <div class="image-container">
+                <img src="images/profile.png" alt="profile-name" />
+              </div>
+            </div>
+            <div class="about-text" data-aos="fade-left">
+              <p>
+                Hello! I'm a passionate developer with a keen eye for design and
+                a love for creating meaningful digital experiences. With
+                expertise in both front-end and back-end development, I bring
+                ideas to life through clean, efficient code and intuitive user
+                interfaces.
+              </p>
+              <div class="stats">
+                <div class="stat-item">
+                  <span class="number">1+</span>
+                  <span class="label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                  <span class="number">0</span>
+                  <span class="label">Projects Completed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills" class="skills">
+        <div class="skills-container" data-aos="fade-left">
+          <div class="skills-content">
+            <div class="skill-info">
+              <h2><span>Front-End</span> Skills</h2>
+              <p>
+                Here’s a quick look at my current skill levels based on practice
+                and projects.
+              </p>
+            </div>
+
+            <div class="skill">
+              <div class="progress">
+                <div class="progress-info">
+                  <span>HTML</span>
+                </div>
+                <div class="progress-line html">
+                  <span></span>
+                </div>
+              </div>
+              <div class="progress">
+                <div class="progress-info">
+                  <span>CSS</span>
+                </div>
+                <div class="progress-line css">
+                  <span></span>
+                </div>
+              </div>
+              <div class="progress">
+                <div class="progress-info">
+                  <span>JavaScript</span>
+                </div>
+                <div class="progress-line javascript">
+                  <span></span>
+                </div>
+              </div>
+              <div class="progress">
+                <div class="progress-info">
+                  <span>Git & GitHub</span>
+                </div>
+                <div class="progress-line git">
+                  <span></span>
+                </div>
+              </div>
+              <div class="progress">
+                <div class="progress-info">
+                  <span>React</span>
+                </div>
+                <div class="progress-line react">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 data-aos="fade-up">Get In Touch</h2>
+          <div class="contact-content">
+            <div class="contact-info" data-aos="fade-right">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>mohamedabdo150250@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h3>Phone</h3>
+                  <p>+20 1028601838</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>Menoufia, Egypt</p>
+                </div>
+              </div>
+              <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+              </div>
+            </div>
+            <form id="contact-form" class="contact-form" data-aos="fade-left">
+              <div class="form-group">
+                <input type="text" id="name" name="from_name" required />
+                <label for="name">Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" required />
+                <label for="email">Your Email</label>
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" required />
+                <label for="subject">Subject</label>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" required></textarea>
+                <label for="message">Your Message</label>
+              </div>
+              <button type="submit" class="submit-button">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h3>Mohamed Abdelhamid</h3>
+            <p>Creating digital experiences that matter</p>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Enter your email" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Mohamed . All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
