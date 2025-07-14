@@ -53,19 +53,6 @@ header.classList.add("dark");
     localStorage.setItem("color", "light");
   }
 });
-// toggle menu
-const menuBtn = document.querySelector(".menu-btn i");
-const menu = document.querySelector(".menu-btn");
-menu.addEventListener("click", () => {
-  if (menuBtn.classList.contains("fa-bars")) {
-    menuBtn.classList.remove("fa-bars");
-    menuBtn.classList.add("fa-x");
-  } else {
-    menuBtn.classList.remove("fa-x");
-    menuBtn.classList.add("fa-bars");
-  }
-});
-
 //import Emailjs
 import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4.1.0/+esm';
 

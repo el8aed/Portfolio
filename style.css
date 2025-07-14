@@ -103,7 +103,7 @@ header nav ul li a::after {
   width: 0;
   height: 2px;
   background-color: var(--fourth-color);
-  transition: width 0.35s;
+  transition: all 0.4s ease;
   display: block;
 }
 header.dark nav ul li a::after {
@@ -126,39 +126,27 @@ border: none;
   padding: 10px;
   cursor: pointer;
 }
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-}
  .dark-mode {
     width: 30px;
   height: 30px;
   font-size: 18px;
   border-radius: 50%;
   background: rgba(116, 115, 115, 0.137);
-  transition: box-shadow 0.3s;
+  transition: all 0.3s ease-in-out;
 }
-.menu-btn{
-background: transparent;
-font-size: 35px;
-display: none;
-}
-
-.menu .dark-mode:hover {
+.dark-mode:hover {
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px;
 }
-.menu .dark-mode {
-  right: 20px;
-  top: 20px;
-}
 
 /* Hero Section */
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
 .hero {
   height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
