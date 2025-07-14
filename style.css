@@ -184,6 +184,9 @@ display: none;
   color: #C69749;
 }
 .hero .highlight {
+  color: var(--fourth-color);
+}
+.dark.hero .highlight {
   color: #b314e7;
 }
 .hero .subtitle {
