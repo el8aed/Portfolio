@@ -1,7 +1,43 @@
- @media screen and (min-width:767px) and (max-width:1023px) {
+
+@media screen and (min-width:767px) and (max-width:1023px) {
    header {
     width: 100%;
 border-radius: 0;
-height: 100px;
+height: 70px;
   }
- }
+}
+@media screen and (min-width: 120px) and (max-width:767px) {
+   header {
+    width: 100%;
+border-radius: 0;
+height: 50px;
+padding: 0 12px;
+justify-content: space-evenly;
+  }
+header nav{
+margin: 0 auto;
+width: 100%;
+justify-content: space-around;
+margin-right: 10px;
+}
+header nav ul{
+  gap: 7px;
+}
+    header nav ul li a{
+  font-size: 12px;
+}
+  header nav h2 {
+  font-size: 18px;
+}
+.image-container {
+  width: 350px;
+  height: 350px;
+}
+.about-content {
+  grid-template-columns: 1fr;
+}
+.contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+}

@@ -30,6 +30,7 @@ body {
   line-height: 1.6;
   flex-direction: column;
   min-height: 100vh;
+width: 100%;
 }
 
 header {
@@ -37,7 +38,7 @@ header {
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.175);
   height: 50px;
@@ -77,7 +78,6 @@ header.dark nav h2 span {
 }
 header nav ul {
   display: flex;
-
   gap: 12px;
 }
 header nav ul li {
@@ -280,11 +280,11 @@ section h2 {
   0%,
   20%,
   40% {
-    opacity: 0.1;
+    opacity: 0;
   }
   60%,
   80% {
-    opacity: 0.7;
+    opacity: 0.4;
   }
   80%,
   100% {
@@ -501,19 +501,16 @@ section h2 {
 margin: 25px;
     gap: 4rem;
 }
-
 .contact-info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-
 .contact-item {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-
 .contact-item i {
     font-size: 1.5rem;
     color: var(--primary-color);
@@ -528,6 +525,7 @@ margin: 25px;
 .form-group textarea {
     width: 100%;
     padding: 1rem;
+    caret-color: #0065f8;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 1rem;
@@ -536,19 +534,26 @@ margin: 25px;
 
 .form-group label {
     position: absolute;
-    top: -0.5rem;
-    left: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--light-text);
+    top: -1rem;
+    left: 0.7rem;
+    font-size: 0.rem;
+box-shadow: 2px 5px 5px #4e71943a ;
     background-color: white;
     transition: var(--transition);
-
-padding: 0 0.5rem;
+    padding: 0 0.3rem;
+font-weight: 400;
     pointer-events: none;
+    border-radius: 2px;
+}
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+    color: var(--fourth-color);
+
+box-shadow: 2px 5px 7px #0867e23a ;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus{
     border-color: var(--primary-color);
     outline: none;
 }
@@ -601,6 +606,8 @@ footer {
   background: var(--textColor);
   color: white;
   padding: 4rem 0 2rem;
+font-size: 18px;
+font-weight: 300;
 }
 
 .footer-content {
@@ -611,13 +618,17 @@ margin: 0 30px;
 margin-bottom: 60px;
 }
 
-.footer-logo h3 {
+.footer-logo h3,
+ .footer-newsletter h4,
+ .footer-links h4 {
+font-weight: 600;
   color: white;
   margin-bottom: 1rem;
 }
 
 .footer-links ul {
   list-style: none;
+
 }
 
 .footer-links a {
@@ -632,6 +643,7 @@ margin-bottom: 60px;
 
 .newsletter-form {
   display: flex;
+flex-wrap: wrap;
   gap: 0.5rem;
 }
 
@@ -640,6 +652,8 @@ margin-bottom: 60px;
   border: none;
   border-radius: 5px;
   flex: 1;
+outline: none;
+caret-color: var(--fourth-color) ;
 }
 
 .newsletter-form button {
