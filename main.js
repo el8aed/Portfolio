@@ -24,35 +24,23 @@ window.addEventListener("scroll", () => {
 
 const darkToggle = document.querySelector(".dark-mode");
 const icon = darkToggle.querySelector("i");
-const home = document.querySelector(".hero");
-// Load saved mode on page load
-const savedMode = localStorage.getItem("color");
-if (savedMode === "dark") {
-  header.classList.add("dark");
-  home.classList.add("dark");
-  icon.classList.remove("fa-moon");
-  icon.classList.add("fa-sun");
-  icon.style.color = "#cea637ff";
+const html = document.documentElement;
+
+// Apply saved theme on page load
+if (localStorage.getItem("color") === "dark") {
+  html.classList.add("dark");
+  icon.classList.replace("fa-moon", "fa-sun");
+  icon.style.color = "#fd7014";
 }
 
-// Toggle dark mode
+// Toggle theme
 darkToggle.addEventListener("click", () => {
-  if (icon.classList.contains("fa-moon")) {
-header.classList.add("dark");
-    home.classList.add("dark");
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
-    icon.style.color = "#cea637ff";
-    localStorage.setItem("color", "dark");
-  } else {
-    header.classList.remove("dark");
-    home.classList.remove("dark");
-    icon.classList.remove("fa-sun");
-    icon.classList.add("fa-moon");
-    icon.style.color = "#1a1a1a";
-    localStorage.setItem("color", "light");
-  }
+  const isDark = html.classList.toggle("dark");
+  icon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
+  icon.style.color = isDark ? "#fd7014" : "#1a1a1a";
+  localStorage.setItem("color", isDark ? "dark" : "light");
 });
+
 //import Emailjs
 import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4.1.0/+esm';
 
