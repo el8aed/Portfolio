@@ -24,44 +24,61 @@ window.addEventListener("scroll", () => {
 
 const darkToggle = document.querySelector(".dark-mode");
 const icon = darkToggle.querySelector("i");
-const html = document.documentElement;
+const body = document.body;
+const animate = document.querySelector(".highlight");
 
-// Check saved theme or system preference
-const savedTheme = localStorage.getItem("color");
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+let typingInterval;
 
-if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-  html.classList.add("dark");
-  icon.classList.replace("fa-moon", "fa-sun");
-  icon.style.color = "#fd7014";
-} else {
-  html.classList.remove("dark");
-  icon.classList.replace("fa-sun", "fa-moon");
-  icon.style.color = "#1a1a1a";
+const typing = () => {
+  setTimeout(() => animate.innerHTML = "Mohamed", 0);
+  setTimeout(() => animate.innerHTML = "Frontend", 4000);
+  setTimeout(() => animate.innerHTML = "Developer", 8000);
+};
+
+function startTyping() {
+  typing();
+  typingInterval = setInterval(typing, 12000);
 }
 
-// Toggle dark mode
-darkToggle.addEventListener("click", () => {
-  const isDark = html.classList.toggle("dark");
+function stopTyping() {
+  clearInterval(typingInterval);
+}
 
+// Reset theme completely
+body.classList.remove("dark");
+animate.classList.remove("dark");
+
+// Apply saved theme on page load
+const savedTheme = localStorage.getItem("color");
+if (savedTheme === "dark") {
+  body.classList.add("dark");
+  animate.classList.add("dark");
+  icon.classList.replace("fa-moon", "fa-sun");
+  icon.style.color = "#fd7014";
+  startTyping();
+} else {
+  icon.classList.replace("fa-sun", "fa-moon");
+  icon.style.color = "#1a1a1a";
+  animate.innerHTML = "Mohamed";
+}
+// Toggle theme
+darkToggle.addEventListener("click", () => {
+  const isDark = body.classList.toggle("dark");
+  animate.classList.toggle("dark");
+  icon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
+  icon.style.color = isDark ? "#fd7014" : "#1a1a1a";
+  localStorage.setItem("color", isDark ? "dark" : "light");
   if (isDark) {
-    icon.classList.replace("fa-moon", "fa-sun");
-    icon.style.color = "#fd7014";
-    localStorage.setItem("color", "dark");
+    startTyping();
   } else {
-    icon.classList.replace("fa-sun", "fa-moon");
-    icon.style.color = "#1a1a1a";
-    localStorage.setItem("color", "light");
+    stopTyping();
+    animate.innerHTML = "Mohamed";
   }
 });
-
 //import Emailjs
 import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4.1.0/+esm';
-
 emailjs.init("IxTvCs3lBPrkfs0c2"); // ← public key بتاعك
-
 const form = document.getElementById("contact-form");
-
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   try {
@@ -76,26 +93,5 @@ form.addEventListener("submit", async (e) => {
     console.error("❌ فشل الإرسال:", error);
     alert("❌ فشل إرسال الرسالة. راجع الكونسول.");
   }
-});
-const element = document.querySelector(".highlight");
-window.addEventListener("load", () => {
-  if (document.documentElement.classList.contains("dark")){
-const typeWriter = () => {
-setTimeout(() => {
-element.innerHTML = "Mohamed";
-},0);
-setTimeout(() => {
-element.innerHTML = "Frontend";
-},4000);
-setTimeout(() => {
-element.innerHTML = "Web Developer";
-},8000);
-};
-typeWriter();
-setInterval(typeWriter, 12000);
-}else if (document.documentElement.classList.contains("highlight")){
-element.innerHTML = "Mohamed";
-
-}
 });
 

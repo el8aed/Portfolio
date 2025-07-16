@@ -177,7 +177,7 @@ main {
   color: var(--fourth-color);
   position: relative;
 }
-/* .dark .hero .highlight::after{
+.dark .hero .highlight::after{
 content: "";
 position: absolute;
 left: 0;
@@ -197,7 +197,7 @@ left: 102%;
 opacity: 1;
 left:0;
 }
-} */
+}
 .dark .hero .highlight {
   color: #EEEEEE;
 }
