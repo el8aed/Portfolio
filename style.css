@@ -175,7 +175,29 @@ main {
 }
 .hero .highlight {
   color: var(--fourth-color);
+  position: relative;
 }
+/* .dark .hero .highlight::after{
+content: "";
+position: absolute;
+left: 0;
+top: 0;
+background: #1c2646;
+border-left: 1px solid #fd7014;
+height: 100%;
+width: 100%;
+animation: highlightAnimation steps(12) 4s infinite;
+}
+@keyframes highlightAnimation {
+40%,60% {
+opacity: 0.95;
+left: 102%;
+}
+100% {
+opacity: 1;
+left:0;
+}
+} */
 .dark .hero .highlight {
   color: #EEEEEE;
 }
@@ -545,6 +567,10 @@ color: #eeeeee;
 }
 .contact-item i {
   font-size: 1.5rem;
+  color: var(--fourth-color);
+}
+.dark .contact-item i {
+  font-size: 1.5rem;
   color:#fd7014;
 }
 .form-group {
@@ -602,13 +628,17 @@ box-shadow: 0px 0px 2px #fd7014 ;
   margin-top: 1rem;
 }
 .social-links a {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+}
+.social-links a:hover{
+transition: all 0.3s ease-out;
+transform: scale(1.1);
 }
 .social-links a:first-child {
   color: var(--section-bg);
 }
 .social-links a:nth-child(2) {
-  color: var(--second-color);
+    color: var(--primary-color);
 }
 .social-links a:last-child {
   color: var(--fourth-color);
