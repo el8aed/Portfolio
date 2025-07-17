@@ -27,28 +27,44 @@ const icon = darkToggle.querySelector("i");
 const body = document.body;
 const animate = document.querySelector(".highlight");
 
-let typingInterval;
+let typingInterval = null;
+let timeoutIds = [];
 
 const typing = () => {
-  setTimeout(() => animate.innerHTML = "Mohamed", 0);
-  setTimeout(() => animate.innerHTML = "Frontend", 4000);
-  setTimeout(() => animate.innerHTML = "Developer", 8000);
+  if (!animate) return;
+
+  // احفظ التايمر علشان نقدر نلغيه
+  timeoutIds.push(setTimeout(() => animate.innerHTML = "Mohamed", 0));
+  timeoutIds.push(setTimeout(() => animate.innerHTML = "Frontend", 4000));
+  timeoutIds.push(setTimeout(() => animate.innerHTML = "Web Developer", 8000));
 };
 
 function startTyping() {
+  if (typingInterval !== null) return;
   typing();
   typingInterval = setInterval(typing, 12000);
 }
 
 function stopTyping() {
-  clearInterval(typingInterval);
+  // وقف الـ setInterval
+  if (typingInterval !== null) {
+    clearInterval(typingInterval);
+    typingInterval = null;
+  }
+
+  // امسح كل التايمرات اللي جوا typing
+  timeoutIds.forEach(id => clearTimeout(id));
+  timeoutIds = [];
+
+  // رجّع النص الأساسي
+  if (animate) animate.innerHTML = "Mohamed";
 }
 
-// Reset theme completely
+// ابدأ على الوضع المحايد
 body.classList.remove("dark");
 animate.classList.remove("dark");
 
-// Apply saved theme on page load
+// شغّل الوضع حسب الـ localStorage
 const savedTheme = localStorage.getItem("color");
 if (savedTheme === "dark") {
   body.classList.add("dark");
@@ -59,22 +75,25 @@ if (savedTheme === "dark") {
 } else {
   icon.classList.replace("fa-sun", "fa-moon");
   icon.style.color = "#1a1a1a";
-  animate.innerHTML = "Mohamed";
+  stopTyping();
 }
-// Toggle theme
+
+// عند الضغط على زر تغيير الثيم
 darkToggle.addEventListener("click", () => {
   const isDark = body.classList.toggle("dark");
   animate.classList.toggle("dark");
+
   icon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
   icon.style.color = isDark ? "#fd7014" : "#1a1a1a";
   localStorage.setItem("color", isDark ? "dark" : "light");
+
   if (isDark) {
     startTyping();
   } else {
     stopTyping();
-    animate.innerHTML = "Mohamed";
   }
 });
+
 //import Emailjs
 import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4.1.0/+esm';
 emailjs.init("IxTvCs3lBPrkfs0c2"); // ← public key بتاعك
